@@ -1,16 +1,43 @@
-<ion-header>
-  <ion-navbar transparent>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+
 
 <ion-content padding >
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ 
+
+     <div style='height:80px;'></div>
+    <div style='text-align:center;'><h1>QR SCANNER</h1></div>
+    <div style='height:80px;'></div>
+
+      <ion-item>
+        <ion-label>Usuario</ion-label>
+        <ion-input type="text" required maxlength="10" [(ngModel)]="user.usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input [(ngModel)]="user.password" maxlength="10" type='password'></ion-input>
+      </ion-item>
+
+     
+      <ion-item>
+    <ion-label>Obra</ion-label>
+            <ion-select    id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.obra" interface="popover">
+            <ion-option *ngFor="let d of obras" [value]="d">{{d.photo}}</ion-option>
+
+            </ion-select>
+ 
+    </ion-item>
+      <button ion-button type="button" color='dark' (click)='ingresar(user)' block>Ingresar</button>
+
+       
+
+
+
+
 
   <button ion-button (click)='leer()'>Leer</button>
+
+  <button ion-button (click)='ocultar()'>Ocultar</button>
+
+
 </ion-content>
+
+
