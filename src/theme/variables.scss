@@ -73,6 +73,12 @@ $colors: (
 @import "ionic.theme.default";
 
 
+     .transparentBody {
+    background: transparent !important;
+	
+	}
+
+
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
