@@ -1,14 +1,17 @@
 
 
-<ion-content padding >
+<ion-content  >
  
 
-     <div style='height:80px;'></div>
-    <div style='text-align:center;'><h1>QR SCANNER</h1></div>
-    <div style='height:80px;'></div>
+    <div *ngIf='muestraregistro' padding>
+     
+
+     <div style='text-align:center;' class='animated bounce'><img style='max-width:200px;' src="https://www.onlygfx.com/wp-content/uploads/2016/02/3d-logo-3.png"></div>
+    <div  style='text-align:center;'><h1 style='color: #166fc6;;'>QR SCANNER</h1></div>
+    <div style='height:30px;'></div>
 
       <ion-item>
-        <ion-label>Usuario</ion-label>
+        <ion-label>User</ion-label>
         <ion-input type="text" required maxlength="10" [(ngModel)]="user.usuario"></ion-input>
       </ion-item>
       <ion-item>
@@ -18,26 +21,112 @@
 
      
       <ion-item>
-    <ion-label>Obra</ion-label>
-            <ion-select    id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.obra" interface="popover">
-            <ion-option *ngFor="let d of obras" [value]="d">{{d.photo}}</ion-option>
+    <ion-label>Project</ion-label>
+            <ion-select   id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.obra" interface="popover">
+            <ion-option *ngFor="let d of obras" [value]="d.Codigo">{{d.Obra}}</ion-option>
 
             </ion-select>
  
     </ion-item>
-      <button ion-button type="button" color='dark' (click)='ingresar(user)' block>Ingresar</button>
+      <button ion-button type="button" round color='primary' (click)='ingresar(user)' block>Login</button>
 
        
+    </div>
+
+
+<div *ngIf='!muestraregistro'>
+
+  
+
+    <ion-fab  class='animated flipInY' *ngIf='camaralado' botton left top>
+   
+    <button ion-fab color="dark" (click)='frontal()'><ion-icon name="camera"></ion-icon></button>
+
+  </ion-fab>
+
+  <ion-fab  class='animated flipInY' *ngIf='!camaralado' botton left top>
+    
+    <button ion-fab color="dark"  (click)='back()'><ion-icon name="camera"></ion-icon></button>
+
+  </ion-fab>
+
+
+  
+
+   <ion-fab *ngIf='!muestraqr' botton right top>
+
+    
+    <button color='danger' ion-fab (click)='salir()' ><ion-icon ios="ios-exit" md="md-exit"></ion-icon></button>
+  
+  </ion-fab>
+
+
+ <!--<ion-fab *ngIf='!muestraqr' botton center top>
+
+    
+    <button color='primary' ion-fab (click)='leer()' ><ion-icon name="qr-scanner"></ion-icon></button>
+  
+  </ion-fab>-->
 
 
 
+  
+
+   
+   
 
 
-  <button ion-button (click)='leer()'>Leer</button>
+   
 
-  <button ion-button (click)='ocultar()'>Ocultar</button>
+</div>
 
+<ion-footer *ngIf='!muestraregistro'>
+  <ion-toolbar>
+     <div style='background:#4b93fb;color:#fff;'>
+           <!--<ion-item>
+            <ion-label>Accion</ion-label>
+
+                    <ion-select id="loginField" type="text" required name='distrito'  [(ngModel)] = "user.accion" interface="popover">
+
+                    <ion-option *ngFor="let d of acciones" [value]="d.id">{{d.nombre}}</ion-option>
+
+                    </ion-select>
+         
+            </ion-item>-->
+
+
+          <ion-item ><ion-row><ion-col style='color: #fff;'>Name: </ion-col><ion-col style='color: #fff;'>{{nombre}}</ion-col> </ion-row> </ion-item>
+
+           <ion-item ><ion-row><ion-col style='color: #fff;'>Date: </ion-col><ion-col style='color: #fff;'>{{fecha | slice:0:10}} </ion-col></ion-row> </ion-item>
+
+           <ion-item ><ion-row><ion-col style='color: #fff;'>Time: </ion-col><ion-col style='color: red; font-size:20px;'>{{fecha | slice:10:20 }} </ion-col></ion-row> </ion-item>
+
+           <ion-item >
+
+
+            <ion-row >
+
+            <ion-col  style='color: #fff;'>Lat: </ion-col><ion-col style='color: #fff;'>{{latitud}} </ion-col>
+            <ion-col  style='color: #fff;'>Lng: </ion-col><ion-col style='color: #fff;'>{{longitud}} </ion-col>
+
+          </ion-row> 
+
+
+           </ion-item>
+
+          <!--<ion-item *ngIf='fecha'>Fecha: {{fecha}}</ion-item>
+
+          <ion-item *ngIf='latitud'>Latitud: {{latitud}}</ion-item>
+
+          <ion-item *ngIf='longitud'>Longitud: {{longitud}}</ion-item>-->
+
+
+  </div>
+  </ion-toolbar>
+</ion-footer>
 
 </ion-content>
+
+
 
 

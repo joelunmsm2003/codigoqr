@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { IonicStorageModule} from '@ionic/storage';
 import { HttpClientModule,HttpClient } from '@angular/common/http'; 
 import { Http, RequestOptions, HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { Http, RequestOptions, HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     QRScanner,
+    Geolocation,
 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

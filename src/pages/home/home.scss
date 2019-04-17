@@ -1,13 +1,72 @@
 page-home {
 
+
+    .mitoast{
+
+        font-family: 'Montserrat', sans-serif !important;
+
+    }
+
+
+    font-family: 'Montserrat', sans-serif;
+
 	 ion-content {
        background: transparent !important;
     }
+
 
     .transparentBody {
     background: transparent !important;
 	
 	}
+
+    .text-input {
+
+    text-align: right;
+}
+
+
+    .button-inner{
+
+        font-family: 'Montserrat';
+    }
+
+	
+
+	.item-md{
+
+		color:#222 !important;
+		background:none transparent !important;
+	}
+
+	h1{
+		font-family: 'Faster One', cursive;
+	}
+
+
+	.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #222;
+    -webkit-box-shadow: inset 0 -1px 0 0 #222;
+    box-shadow: inset 0 -1px 0 0 #222;
+}
+
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color: #222 !important;
+}
+
+
+.mitoast {
+
+.toast-button:before {
+    font-family: "Ionicons";
+    margin-top: 14px;
+    margin-left: -75px;
+    z-index: 999;
+    position: absolute;
+    font-size: 2.2em;
+    content: "\f366";
+  }
+}
 
 
 	
